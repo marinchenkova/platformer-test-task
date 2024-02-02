@@ -15,7 +15,7 @@
   
 ### Демонстрация игрового процесса
 
-https://github.com/marinchenkova/platformer-test-task/assets/22106355/05c02108-8316-4436-9cc0-5869396a63ab
+https://github.com/marinchenkova/platformer-test-task/assets/22106355/1ed283d2-1333-405a-bfc9-d83719b6d3df
 
 ### Техническое задание
 
