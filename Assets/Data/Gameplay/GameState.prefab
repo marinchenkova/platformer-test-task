@@ -95,9 +95,14 @@ MonoBehaviour:
   _applyPrefabFirst: 0
   _components:
   - rid: 7110554437336694788
+  - rid: 5463154476255806269
   references:
     version: 2
     RefIds:
+    - rid: 5463154476255806269
+      type: {class: PlayerCameraSettingsComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        initialCameraZoom: 5
     - rid: 7110554437336694788
       type: {class: GameStateComponent, ns: Platformer.Components, asm: Platformer}
       data:

@@ -29,9 +29,9 @@ namespace Platformer.Components {
             }
 
             var gameState = _entity.GetComponent<GameStateBindingComponent>()?.gameState ?? default;
-            if (gameState.GetComponent<GameStateComponent>() is { } gameStateComponent) {
-                _targetZoom = gameStateComponent.PlayerCameraZoom;
-                _currentZoom = gameStateComponent.PlayerCameraZoom;
+            if (gameState.GetComponent<PlayerCameraSettingsComponent>() is { } playerCameraSettingsComponent) {
+                _targetZoom = Mathf.Clamp(playerCameraSettingsComponent.Zoom, minZoom, maxZoom);
+                _currentZoom = _targetZoom;
             }
 
             _entity.world.Subscribe(this, updateAt);
@@ -52,8 +52,9 @@ namespace Platformer.Components {
 
         void IEntityComponent.OnDestroy(Entity entity) {
             var gameState = _entity.GetComponent<GameStateBindingComponent>()?.gameState ?? default;
-            if (gameState.GetComponent<GameStateComponent>() is { } gameStateComponent) {
-                gameStateComponent.PlayerCameraZoom = _targetZoom;
+
+            if (gameState.GetComponent<PlayerCameraSettingsComponent>() is { } playerCameraSettingsComponent) {
+                playerCameraSettingsComponent.Zoom = _targetZoom;
             }
 
             _entity = default;

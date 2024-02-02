@@ -12,13 +12,11 @@ namespace Platformer.Components {
         [SerializeField] private InputActionsLauncher _inputActionsLauncher;
         [SerializeField] private EntityBuilder _playerBuilder;
         public Transform playerSpawnPoint;
-        public float initialCameraZoom;
 
         public event Action<Entity> OnPlayerRespawned = delegate {  };
         public event Action OnPlayerDestroyed = delegate {  };
 
         public Entity Player { get; private set; }
-        public float PlayerCameraZoom { get; set; }
 
         private Entity _entity;
 
@@ -27,8 +25,6 @@ namespace Platformer.Components {
 
             _inputActionsLauncher.InputActions.Menu.AnyKey.performed -= OnAnyKeyPressed;
             _inputActionsLauncher.InputActions.Menu.AnyKey.performed += OnAnyKeyPressed;
-
-            PlayerCameraZoom = initialCameraZoom;
         }
 
         void IEntityComponent.OnDisable(Entity entity) {
