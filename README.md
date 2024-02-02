@@ -4,7 +4,6 @@
 
 Ссылки на билды:
 - [`platformer.zip`](https://drive.google.com/file/d/1Rb0s3saUky23n0HtJesmEOFI-nWOMOZ6/view?usp=drive_link)
-- [`platformer_macOS.zip`](https://drive.google.com/file/d/1CzUuRJ1kQyRoPIGbmDD3CE9VPoZ6MVcI/view?usp=drive_link)
 
 ### Содержание
 
