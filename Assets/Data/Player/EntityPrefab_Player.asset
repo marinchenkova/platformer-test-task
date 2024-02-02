@@ -1,0 +1,213 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95750097cd124595b69b4f9d80cba6c3, type: 3}
+  m_Name: EntityPrefab_Player
+  m_EditorClassIdentifier: 
+  _components:
+  - rid: 7110554459185086468
+  - rid: 7110554459185086466
+  - rid: 7110554459185086474
+  - rid: 7110554459185086476
+  - rid: 7110554459185086473
+  - rid: 7110554459185086479
+  - rid: 7110554459185086480
+  - rid: 7110554459185086484
+  - rid: 7110554459185086552
+  - rid: 7110554459185086553
+  - rid: 7110554459185086850
+  - rid: 7110554459185086851
+  - rid: 7110554504299544576
+  - rid: 7110554459185086475
+  - rid: 5463154464518569984
+  - rid: 7110554459185086482
+  references:
+    version: 2
+    RefIds:
+    - rid: 5463154464518569984
+      type: {class: PlayerCameraComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        updateAt: 0
+        zoomSmoothing: 5
+        zoomSensitivity: -0.01
+        zoomVector: {x: -1, y: 0.1}
+        initialZoom: 5
+        minZoom: 1.5
+        maxZoom: 10
+    - rid: 7110554459185086466
+      type: {class: CollisionsBufferComponent, ns: Platformer.Components, asm: Platformer}
+      data: 
+    - rid: 7110554459185086468
+      type: {class: ViewBindingComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        _transform: {fileID: 5342502384024895056, guid: 41a58e591f3cff34f8e2fb9c0384ebc8, type: 3}
+        useGameObjectDirectly: 0
+        applyViewPositionOnBind: 0
+    - rid: 7110554459185086473
+      type: {class: PlayerMotionComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        updateAt: 2
+        motionInputSmoothing: 20
+        rotationInputSmoothing: 720
+        motionSqrThreshold: 0.05
+        walkSpeed: 3
+        runSpeed: 8
+        crouchSpeed: 2
+        inAirSpeed: 2
+        jumpForceWalk: 8
+        jumpForceRun: 12
+        jumpForceCrouch: 6
+        jumpForceAir: 0
+    - rid: 7110554459185086474
+      type: {class: CharacterControllerCollisionDetectorComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        _maxHits: 6
+        _radiusAdd: 0
+        _distanceAdd: 0
+        _direction: {x: 0, y: -1, z: 0}
+        _layerMask:
+          serializedVersion: 2
+          m_Bits: 1
+        _queryTriggerInteraction: 1
+    - rid: 7110554459185086475
+      type: {class: SyncCharacterControllerComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        updateAt: 3
+    - rid: 7110554459185086476
+      type: {class: MassComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        updateAt: 2
+        airInertialFactor: 10
+        groundInertialFactor: 20
+        inputInfluenceFactor: 0.3
+        gravityForce: 15
+        isGravityEnabled: 1
+    - rid: 7110554459185086479
+      type: {class: PlayerPoseComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        updateAt: 2
+        standHeight: 2
+        standRadius: 0.35
+        crouchHeight: 1.2
+        crouchRadius: 0.35
+        poseChangeDuration: 0.2
+    - rid: 7110554459185086480
+      type: {class: DestroyBelowHeightComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        updateAt: 0
+        height: -100
+    - rid: 7110554459185086482
+      type: {class: CameraFollowingComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        updateAt: 3
+        verticalOffset: 1
+        horizontalOffset: -8
+        maxDistanceToUseReturnSpeed: 20
+        returnSpeed: 40
+        positionSmoothing: 10
+    - rid: 7110554459185086484
+      type: {class: SpawnEntityOnDestroyComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        prefab: {fileID: 11400000, guid: e6af5b17218bd3544a21660cab8b53d8, type: 2}
+        scale: {x: 20, y: 20, z: 20}
+        count: 1
+    - rid: 7110554459185086552
+      type: {class: HealthComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        health: 1
+        destroyOnZeroHealth: 1
+        destroyDelay: 2
+    - rid: 7110554459185086553
+      type: {class: DisablePlayerMotionOnDeathComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        setOrientationAngle: 90
+    - rid: 7110554459185086850
+      type: {class: PlayerStepsComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        updateAt: 0
+        baseStepDuration: 0.4
+        velocityWeight: -0.02
+    - rid: 7110554459185086851
+      type: {class: PlayerSoundComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        steps:
+        - {fileID: 8300000, guid: 78945261e92dda44298c22aebef6fbe1, type: 3}
+        - {fileID: 8300000, guid: b54230395296b8644b327b71ef757a21, type: 3}
+        - {fileID: 8300000, guid: 08194e7fb55f2d64f8caa4b36f29e94f, type: 3}
+        - {fileID: 8300000, guid: 353d77e5f38c73942a37c210de64822c, type: 3}
+        landings:
+        - {fileID: 8300000, guid: 710add867a1fa5a438580dec52f9b6c2, type: 3}
+        - {fileID: 8300000, guid: d5ea35680272d3a4c8ea10970705d44f, type: 3}
+        jumps:
+        - {fileID: 8300000, guid: 7c8861943b1ebd946bb672789b958e22, type: 3}
+        death: {fileID: 8300000, guid: 67629ceb3f88e3e45a9b551baaf31a7e, type: 3}
+        stepVolume: 1
+        landingVolume: 1
+        jumpVolume: 1
+        deathVolume: 1
+        landingPauseMin: 0.4
+    - rid: 7110554504299544576
+      type: {class: PlayerAnimatorComponent, ns: Platformer.Components, asm: Platformer}
+      data:
+        updateAt: 3
+        speedParameter: Velocity
+        speedCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 0.11742477
+            outSlope: 0.11742477
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.1510327
+          - serializedVersion: 3
+            time: 10
+            value: 1
+            inSlope: 0.016293207
+            outSlope: 0.016293207
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.0893034
+            outWeight: 0.33333334
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        poseParameter: Pose
+        poseCurve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        jumpParameter: Jump
+        isGroundedParameter: IsGrounded
+        isDeadParameter: IsDead

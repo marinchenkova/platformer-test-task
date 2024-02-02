@@ -1,0 +1,19 @@
+{
+    "name": "Platformer",
+    "rootNamespace": "Platformer",
+    "references": [
+        "GUID:e94ef0f3a9a83d640aa9eaaac95bb44f",
+        "GUID:89fae2a08e4486044a99bc36f89f657a",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
